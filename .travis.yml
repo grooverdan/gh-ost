@@ -7,15 +7,16 @@ os:
   - linux
 
 env:
-- MYSQL_USER=root
-- CURRENT_CI_ENV=travis
+  global:
+  - MYSQL_USER=root
+  - CURRENT_CI_ENV=travis
 
 matrix:
   include:
-    - os: MARIADB-10.0
+    - env: MARIADB-10.0
       addons:
         mariadb: '10.0'
-    - os: MARIADB-10.3
+    - env: MARIADB-10.3
       addons:
         mariadb: '10.3'
 
